@@ -3,10 +3,12 @@ import {Text} from 'react-native';
 import Padrao from '../estilo/Padrao';
 
 export const Inverter = props => {
-  const inv = props.texto
-    .split('')
-    .reverse()
-    .join('');
+  const inv =
+    props.texto ||
+    'jonathas'
+      .split('')
+      .reverse()
+      .join('');
   return <Text style={Padrao.ex}>{inv}</Text>;
 };
 
