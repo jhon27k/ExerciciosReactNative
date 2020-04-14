@@ -7,11 +7,13 @@ import Menu from './componentes/Menu';
 import {createAppContainer} from 'react-navigation';
 import {createDrawerNavigator} from 'react-navigation-drawer';
 
-const Routes = createAppContainer(
+export const Routes = createAppContainer(
   createDrawerNavigator(
     {
-      Simples,
-      MegaSena,
+      Simples: () => <Simples texto="eedee" />,
+      MegaSena: () => <MegaSena numeros={3} />,
+      Inverter,
+      ParImpar,
     },
     {
       initialRouteName: 'MegaSena',
@@ -19,8 +21,6 @@ const Routes = createAppContainer(
     },
   ),
 );
-
-export default Routes;
 
 // export default class App extends Component {
 //   render() {
@@ -35,6 +35,7 @@ export default Routes;
 //     );
 //   }
 // }
+
 // export default function() {
 //   return (
 //     <View style={styles.container}>
@@ -42,6 +43,8 @@ export default Routes;
 //     </View>
 //   );
 // }
+
+export default Routes;
 
 const styles = StyleSheet.create({
   container: {
