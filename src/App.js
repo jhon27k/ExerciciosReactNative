@@ -9,13 +9,24 @@ import {createDrawerNavigator} from 'react-navigation-drawer';
 import Contador from './componentes/Contador';
 import Plataformas from './componentes/Plataformas';
 import ValidarProps from './componentes/ValidarProps';
+import Evento from './componentes/Evento';
+import {Avo} from './componentes/ComunicaoDireta';
+import {TextoSincronizado} from './componentes/ComunicacaoIndireta';
+import ListaFlex from './componentes/ListaFlex';
+import Flex from './componentes/Flex';
 
 export const Routes = createAppContainer(
   createDrawerNavigator(
     {
+      Flex: () => <Flex />,
+      ListaFlex: () => <ListaFlex />,
+      ComunicacaoIndireta: () => <TextoSincronizado />,
+      Avo: () => <Avo nome="Joao" sobrenome="Silva" />,
+      Evento: () => <Evento />,
       Plataformas: () => <Plataformas />,
       ValidarProps: () => <ValidarProps label="teste" ano={20} />,
       Simples: () => <Simples texto="eedee" />,
+
       MegaSena: () => <MegaSena numeros={3} />,
       Inverter,
       ParImpar: () => <ParImpar numero={2} />,
@@ -25,7 +36,7 @@ export const Routes = createAppContainer(
       },
     },
     {
-      initialRouteName: 'Contador',
+      initialRouteName: 'Flex',
       contentComponent: Menu,
     },
   ),
